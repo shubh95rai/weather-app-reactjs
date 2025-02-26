@@ -69,7 +69,7 @@ function App() {
   // console.log(weatherData);
 
   return (
-    <main className="font-inter bg-gradient-to-b from-violet-900 to to-indigo-600 min-h-screen flex justify-center items-center select-none py-10 px-5 flex-col gap-8 text-neutral-100">
+    <main className="font-inter bg-gradient-to-b from-violet-900 to to-indigo-600 min-h-[100dvh] flex justify-center items-center select-none py-10 px-5 flex-col gap-8 text-neutral-100">
       <h1 className=" sm:text-5xl text-4xl font-medium bg-gradient-to-r bg-clip-text from-neutral-50 to-neutral-300 text-transparent tracking-tight">
         Weather App
       </h1>
