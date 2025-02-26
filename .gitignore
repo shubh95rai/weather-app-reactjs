@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 favicon_io
+.env
 
 # Editor directories and files
 .vscode/*

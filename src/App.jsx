@@ -31,7 +31,9 @@ function App() {
     setTimeout(async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0e9fc73a96350c55e59697ba43783312&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
+            import.meta.env.VITE_API_URL
+          }&units=metric`
         );
 
         if (!response.ok) {
