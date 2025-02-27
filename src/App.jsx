@@ -56,14 +56,8 @@ function App() {
     fetchData(search);
   }, []);
 
-  function handleSearch() {
+  function handleSubmit() {
     if (search) {
-      fetchData(search);
-    }
-  }
-
-  function handleSubmit(e) {
-    if (search && e.code === "Enter") {
       fetchData(search);
       localStorage.setItem("city", search);
     }
@@ -76,25 +70,26 @@ function App() {
         Weather App
       </h1>
       <div className="bg-gradient-to-b from-indigo-950 to-indigo-800 p-10 rounded-lg shadow flex flex-col gap-8 h-[450px] max-w-md w-full">
-        <section className="flex items-center justify-center gap-2">
+        <form
+          action={handleSubmit}
+          className="flex items-center justify-center gap-2"
+        >
           <input
             type="text"
             className="bg-neutral-100 text-black px-5 py-2 rounded-full outline-none w-full"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
-            onKeyUp={handleSubmit}
             placeholder="Enter a city name"
             spellCheck="false"
           />
           <button
-            type="button"
+            type="submit"
             className="p-2.5 rounded-full bg-neutral-100 text-black"
-            onClick={handleSearch}
           >
             <IoSearch className="text-xl" />
           </button>
-        </section>
+        </form>
 
         <Weather props={{ search, loading, weatherData, error, date, temp }} />
       </div>
